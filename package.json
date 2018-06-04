@@ -1,14 +1,37 @@
 {
   "name": "react-training",
-  "version": "1.0.0",
-  "description": "This is my project.",
+  "description": "your existing description here",
+  "engines": {
+    "node": "4.4.2"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"All tests passed\" && exit 0",
-    "build": "echo \"BUILD OK\" && exit 0" ,
-    "prebuild": "npm run test"
-
+    "lint": "eslint . --ext .js",
+    "jasmine": "jasmine",
+    "test": "karma start --singleRun",
+    "build": "echo \"BUILD OK\" && exit 0",
+    "prebuild": "npm run version && npm run test",
+    "version": "node version-check.js",
+    "bundle": "webpack",
+    "start": "http-server dist"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.8.2",
+    "html-webpack-plugin": "^3.2.0",
+    "karma": "^2.0.2",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-webpack": "^3.0.0",
+    "semver": "^5.5.0",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.5"
+  },
+  "dependencies": {
+    "jasmine": "^3.1.0",
+    "karma-commonjs": "^1.0.0"
+  }
 }
